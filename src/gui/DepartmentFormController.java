@@ -45,7 +45,7 @@ public class DepartmentFormController implements Initializable {
 
 	@FXML
 	private Button btCancel;
-
+	
 	@FXML
 	public void onBtSaveAction(ActionEvent event) {
 		if (entity == null) {
@@ -131,5 +131,7 @@ public class DepartmentFormController implements Initializable {
 			lbError.setText(errors.get("name"));
 		}
 	}
+	
+	
 
 }

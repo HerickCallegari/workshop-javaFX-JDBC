@@ -62,12 +62,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 	@Override
 	public void delete(Department obj) {
 	    PreparedStatement st = null;
-	    PreparedStatement st1 = null;
 	    try {
-	    	st1 = conn.prepareStatement("Delete from seller where DepartmentId = ?;");
-	    	st1.setInt(1, obj.getId());
-	    	st1.execute();
-	    	
 	        st = conn.prepareStatement("DELETE FROM department WHERE id = ?;");
 	        st.setInt(1, obj.getId());
 
