@@ -15,6 +15,7 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) {
+		
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
 			ScrollPane scrollPane = loader.load();
@@ -26,6 +27,7 @@ public class Main extends Application {
 			primaryStage.setTitle("JavaFX Aplication desktop");
 			primaryStage.setScene(mainScene);
 			primaryStage.show();
+			
 		} catch(IOException e) {
 			e.printStackTrace();
 		}

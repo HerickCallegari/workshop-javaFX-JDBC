@@ -124,9 +124,13 @@ public class SellerDaoJDBC implements SellerDao {
 	}
 
 	private static Seller instaciateSeller(ResultSet rs) throws SQLException {
-		Department dep = new Department(rs.getInt("DepartmentId"), rs.getString("depName"));
-		return new Seller(rs.getInt("Id"), rs.getString("Name"), rs.getString("Email"), rs.getDate("BirthDate"),
-				rs.getDouble("BaseSalary"), dep);
+		Department dep = new Department(rs.getInt("DepartmentId"),rs.getString("depName"));
+		return new Seller(rs.getInt("Id"), 
+				rs.getString("Name"), 
+				rs.getString("Email"), 
+				new java.util.Date(rs.getTimestamp("BirthDate").getTime()),
+				rs.getDouble("BaseSalary"), 
+				dep);
 	}
 
 	@Override
